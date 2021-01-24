@@ -1,0 +1,22 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+}
+
+apply from: "../dependencies.gradle"
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation project(':domain')
+    implementation retrofit
+    implementation gson
+    implementation gsonConverter
+    implementation loggingInterceptor
+    implementation coroutinesCore
+    implementation coroutinesAndroid
+}
